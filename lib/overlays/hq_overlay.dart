@@ -10,8 +10,8 @@ class HQOverlay extends StatelessWidget {
   Widget build(BuildContext context) {
     // Check if all activities are completed
     final allCompleted =
-        game.gameState.completedMinigames.contains('car_racing') &&
-        game.gameState.completedMinigames.contains('hurdles') &&
+        game.gameState.completedMinigames.contains('keyA_hurdles') &&
+        game.gameState.completedMinigames.contains('keyE_hurdles') &&
         game.gameState.completedMinigames.contains('debate');
 
     // If all completed, proceed to ending based on approval rating
@@ -202,8 +202,8 @@ class HQOverlay extends StatelessWidget {
   ]) {
     // Map NPC IDs to minigame IDs
     String checkId = id;
-    if (id == 'keyA') checkId = 'hurdles';
-    if (id == 'keyE') checkId = 'car_racing';
+    if (id == 'keyA') checkId = 'keyA_hurdles';
+    if (id == 'keyE') checkId = 'keyE_hurdles';
 
     // Use the game instance passed to the constructor
     final completed = game.gameState.completedMinigames.contains(checkId);
